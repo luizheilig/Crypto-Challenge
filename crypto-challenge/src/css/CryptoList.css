@@ -1,0 +1,46 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .addCryptoContainer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .cryptoTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .cryptoTable th, .cryptoTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .cryptoTable th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .searchInput {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .addBtn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .addBtn:hover {
+    background-color: #45a049;
+  }
+  
