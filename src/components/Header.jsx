@@ -6,14 +6,14 @@ import '../css/Header.css'
 function Header() {
   return (
     <div className="header-container">
-      <Link to="/cryptos">
-        <h1>Cryptos</h1>
+      <Link className='header-h1' to="/cryptos">
+        <h2>Cryptos</h2>
       </Link>
-      <Link to="/wallet">
-        <h1>My Wallet</h1>
+      <Link className='header-h1' to="/wallet">
+        <h2>My Wallet</h2>
       </Link>
-      <Link to="/">
-        <h1>Logout</h1>
+      <Link className='header-h1' to="/">
+        <h2>Logout</h2>
       </Link>
     </div>
   )

@@ -123,7 +123,6 @@ function CryptoList() {
               <td>{USDollar.format(exp.quote.USD.price)}</td>
               <td>{USDollar.format(exp.quote.USD.market_cap)}</td>
               <td>{USDollar.format(exp.total_supply)}</td>
-              <td>
                 <button
                   className='addBtn'
                   data-testid="add-btn"
@@ -132,7 +131,6 @@ function CryptoList() {
                 >
                   Add 
                 </button>
-              </td>
             </tr>
           ))}
         </tbody>
