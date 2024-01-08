@@ -64,26 +64,27 @@ function CryptoList() {
     }
 
   return (
-    <div>
+    <div className="container">
       <Header/>
+      <br></br>
         <div>
             {addData && 
-            <div>
-            <h1>{addData[0].name}</h1>
-            <h1>{USDollar.format(addData[0].quote.USD.price)}</h1>
-            <label>
-              Quantidade:
+            <div className='addCryptoContainer'>
+            <h3>{addData[0].name}</h3>
+            <h3>Price:{' '}{USDollar.format(addData[0].quote.USD.price)}</h3>
+            <h3>
+              Quantidade:{' '}
               <input
                 type="number"
                 onChange={(e) => setQuantity(Number(e.target.value))} // Convertendo para número
               ></input>
-            </label>
-            {quantity && (
-              <h1>
+            </h3>
+            {
+              <h3>
                 Total:{' '}
                 {USDollar.format(addData[0].quote.USD.price * quantity)}
-              </h1>
-            )}
+              </h3>
+            }
              <button
                 data-testid="add-btn"
                 id={ addData[0].name }
@@ -94,23 +95,23 @@ function CryptoList() {
             </div>
             }
         </div>
-        <div>
-        <label>
-          Pesquisar
-          <input
+        <div >
+        <label className='searchInput'>
+          Search (name)
+          <input 
             onChange={(e) => filterCrypto(e.target.value)}
             value={searchTerm}
           ></input>
         </label>
         </div>
- {     <table>
+ {     <table className='cryptoTable'>
         <thead>
           <tr>
-            <th>Crypto Name</th>
-            <th>Crypto Symbol</th>
+            <th>Name</th>
+            <th>Symbol</th>
             <th>Price (USD)</th>
             <th>Market Cap (USD)</th>
-            <th>Total Supply</th>
+            <th>Total Supply (USD)</th>
           </tr>
         </thead>
         <tbody>
@@ -123,9 +124,8 @@ function CryptoList() {
               <td>{USDollar.format(exp.quote.USD.market_cap)}</td>
               <td>{USDollar.format(exp.total_supply)}</td>
               <td>
-              </td>
-              <td>
                 <button
+                  className='addBtn'
                   data-testid="add-btn"
                   id={ exp.id }
                   onClick={ addBtnClick }

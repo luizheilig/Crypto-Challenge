@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import '../css/Wallet.css'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 
 function Wallet() {
   const [wallet, setWallet] = useState([]);
@@ -23,12 +27,14 @@ function Wallet() {
       
   return (
     <>
+      <Header/>
+      <div className='wallet-container'>
       {wallet &&
             wallet.map((coin) => (
-            <div key={ coin.name }>
-              <h1>{coin.name}</h1>
-              <h1>{coin.quantity}</h1>
-              <h1>{USDollar.format(coin.quantity*coin.price)}</h1>
+            <div className="wallet-item" key={ coin.name }>
+              <h3>{' '} {coin.name}</h3>
+              <h3>Quantity:{' '} {coin.quantity}</h3>
+              <h3>Total: {' '} {USDollar.format(coin.quantity*coin.price)}</h3>
                 <button
                   data-testid="add-btn"
                   onClick={ () => removeBtnClick(coin.name) }
@@ -37,6 +43,8 @@ function Wallet() {
                 </button>
             </div>
           ))}
+          </div>
+      <Footer/>
     </>
   );
 }

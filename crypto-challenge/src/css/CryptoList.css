@@ -7,13 +7,25 @@
   .addCryptoContainer {
     background-color: #f0f0f0;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
+  }
+
+  .addCryptoContainer h3, .addCryptoContainer input, .addCryptoContainer button {
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
   }
   
   .cryptoTable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .cryptoTable th, .cryptoTable td {
@@ -30,6 +42,9 @@
   .searchInput {
     padding: 10px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
   
   .addBtn {
