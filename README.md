@@ -25,6 +25,10 @@ Testing:
 - Jest
 - React Testing Library
 
+Deploy:
+
+- Netfly: https://my-crypto-challenge.netlify.app
+
 ## Installation
 
 - Clone the repository from github
