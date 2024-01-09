@@ -27,7 +27,6 @@ function CryptoList() {
     
     function addBtnClick({ target: { id } }) {
         const addCrypto = data.filter((add) => Number(add.id) === Number(id));
-        console.log(addCrypto);
         setAddData(addCrypto);
     }
     
@@ -64,17 +63,19 @@ function CryptoList() {
     }
 
   return (
-    <div className="container">
-      <Header/>
+    <>
+    <Header/>
+    <div data-testid="crypto-list-container" className="container">
       <br></br>
         <div>
             {addData && 
-            <div className='addCryptoContainer'>
+            <div data-testid='add-crypto-container' className='addCryptoContainer'>
             <h3>{addData[0].name}</h3>
             <h3>Price:{' '}{USDollar.format(addData[0].quote.USD.price)}</h3>
             <h3>
               Quantity:{' '}
               <input
+                min='1'
                 type="number"
                 onChange={(e) => setQuantity(Number(e.target.value))} // Convertendo para número
               ></input>
@@ -86,7 +87,7 @@ function CryptoList() {
               </h3>
             }
              <button
-                data-testid="add-btn"
+                className='addButtonWallet'
                 id={ addData[0].name }
                 onClick={ addWallet }
             >
@@ -96,15 +97,17 @@ function CryptoList() {
             }
         </div>
         <div >
-        <label className='searchInput'>
+        <h2 className='searchInput'>
           Search (name)
-          <input 
+          <input
             onChange={(e) => filterCrypto(e.target.value)}
             value={searchTerm}
-          ></input>
-        </label>
+          />
+        </h2>
         </div>
- {     <table className='cryptoTable'>
+        
+ {<div className='cryptoTable'>
+ <table>
         <thead>
           <tr>
             <th>Name</th>
@@ -125,7 +128,7 @@ function CryptoList() {
               <td>{USDollar.format(exp.total_supply)}</td>
                 <button
                   className='addBtn'
-                  data-testid="add-btn"
+                  data-testid='add-btn'
                   id={ exp.id }
                   onClick={ addBtnClick }
                 >
@@ -134,9 +137,11 @@ function CryptoList() {
             </tr>
           ))}
         </tbody>
-      </table>}
-      < Footer/>
+      </table>
+ </div>  }  
     </div>
+    < Footer/>
+  </>
   );
 }
 

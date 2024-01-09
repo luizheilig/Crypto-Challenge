@@ -1,5 +1,5 @@
 .container {
-    max-width: 1200px;
+    max-width: 80%;
     margin: 0 auto;
     padding: 20px;
   }
@@ -9,21 +9,35 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    width: 90%;
     margin-bottom: 20px;
   }
 
   .addCryptoContainer h3, .addCryptoContainer input, .addCryptoContainer button {
-    padding: 10px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     padding: 5px;
-    margin: 10px;
-    text-align: center;
+    margin: 5px;
   }
-  
+
+  .addCryptoContainer input {
+    width: 70px;
+  }
+
+  .addButtonWallet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+  }
+
   .cryptoTable {
     width: 100%;
     border-collapse: collapse;
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -31,7 +45,8 @@
   .cryptoTable th, .cryptoTable td {
     border: 1px solid #ddd;
     padding: 10px;
-    text-align: left;
+    text-align: center;
+    max-width: 200px;
   }
   
   .cryptoTable th {
