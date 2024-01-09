@@ -13,12 +13,10 @@ describe('renders the correct content in components', () => {
       </BrowserRouter>
     );
   
-    // Test each Link separately
     const cryptosLink = screen.getByText(/Cryptos/i);
     const walletLink = screen.getByText(/My Wallet/i);
     const logoutLink = screen.getByText(/Logout/i);
   
-    // Check if the links are in the document
     expect(cryptosLink).toBeInTheDocument();
     expect(walletLink).toBeInTheDocument();
     expect(logoutLink).toBeInTheDocument();
